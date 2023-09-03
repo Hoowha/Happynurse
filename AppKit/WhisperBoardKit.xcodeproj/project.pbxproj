@@ -64,6 +64,8 @@
 		661ACA2C7B9D8FBBC8A1374F /* RecordingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E0B029400EAEB3740D6754 /* RecordingState.swift */; };
 		674CC424AA9AC759BE2D2AF3 /* AnimatedTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088F3970FD70C6060C4CFBF7 /* AnimatedTabBar.swift */; };
 		68D50D89DF8EC7ACAA56ABCC /* Inject.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 41C5478F6D6AF42991FDC34B /* Inject.framework */; platformFilter = ios; };
+		68F6641B2AA4706400B33357 /* DefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F6641A2AA4706400B33357 /* DefaultView.swift */; };
+		68F6641E2AA470ED00B33357 /* Colors+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F6641D2AA470ED00B33357 /* Colors+Extension.swift */; };
 		68F9B9F52AA4686500CA9DE1 /* StateSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F9B9F42AA4686500CA9DE1 /* StateSettings.swift */; };
 		6B48280BB1BFE36F7770B7B4 /* WhisperBoardKit_WhisperBoardKit.bundle in Dependencies */ = {isa = PBXBuildFile; fileRef = 1FB9AA9190F3B0AF9B5687D7 /* WhisperBoardKit_WhisperBoardKit.bundle */; platformFilter = ios; };
 		6C3712A28E564D7BF339BB1C /* TabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ED84E4BB8AE5C3856789F8 /* TabBarContainerView.swift */; };
@@ -279,6 +281,8 @@
 		5B7B493C3B67C74B3BEA7D47 /* LocalTranscriptionWorkExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTranscriptionWorkExecutor.swift; sourceTree = "<group>"; };
 		5F5043CA9D23E4E566F29F60 /* CopyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyButton.swift; sourceTree = "<group>"; };
 		611B6C119B91CC47535E2ACC /* ggml-tiny.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "ggml-tiny.bin"; sourceTree = "<group>"; };
+		68F6641A2AA4706400B33357 /* DefaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultView.swift; sourceTree = "<group>"; };
+		68F6641D2AA470ED00B33357 /* Colors+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors+Extension.swift"; sourceTree = "<group>"; };
 		68F9B9F42AA4686500CA9DE1 /* StateSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateSettings.swift; sourceTree = "<group>"; };
 		6D3885B9E3AC712C787410AD /* CasePaths.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CasePaths.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F21FB38D25C9656334F27F3 /* AudioKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AudioKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -588,6 +592,22 @@
 			path = Derived;
 			sourceTree = "<group>";
 		};
+		68F664192AA4705500B33357 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				68F6641A2AA4706400B33357 /* DefaultView.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		68F6641C2AA470DA00B33357 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				68F6641D2AA470ED00B33357 /* Colors+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		68F9B9F32AA4685200CA9DE1 /* AlertSetting */ = {
 			isa = PBXGroup;
 			children = (
@@ -717,6 +737,8 @@
 		CD6E702A1D404AAB580CE381 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				68F6641C2AA470DA00B33357 /* Extension */,
+				68F664192AA4705500B33357 /* UIView */,
 				CEA9B9680466CA352A8C9065 /* App */,
 				0A010BBA29C9E304927E1D5F /* Common */,
 				FED6151DED308413F9E4B07D /* UI */,
@@ -967,12 +989,14 @@
 				D36F06D714742AC2F0CE8952 /* Recording.swift in Sources */,
 				753B74B5F318D9FD7F556C4C /* RecordingControls.swift in Sources */,
 				F2538132E06BDC599EA4C60E /* RecordingCard.swift in Sources */,
+				68F6641E2AA470ED00B33357 /* Colors+Extension.swift in Sources */,
 				3396F9DD869090A3E8C9C4E5 /* RecordingCardView.swift in Sources */,
 				CA43746E47473A1B0674F80C /* RecordingDetailsView.swift in Sources */,
 				EEC4751A2C1AE42602B2F63D /* RecordingListScreenView.swift in Sources */,
 				674CC424AA9AC759BE2D2AF3 /* AnimatedTabBar.swift in Sources */,
 				6534F32B00F1A0F9139635F1 /* RootBackgroundView.swift in Sources */,
 				C220169F5CBD8975CF09C1E9 /* RootStore.swift in Sources */,
+				68F6641B2AA4706400B33357 /* DefaultView.swift in Sources */,
 				9194C586DC10676FE5281D17 /* RootView.swift in Sources */,
 				6C3712A28E564D7BF339BB1C /* TabBarContainerView.swift in Sources */,
 				D6ED1BFEE52D7B7D06DA5F99 /* ModelRowView.swift in Sources */,
