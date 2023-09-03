@@ -19,18 +19,18 @@ extension Color {
 
     static let background = Color(hex: 0xF2F4F6)
 
-    static let white = Color(hex: 0xFFFFFF)
-    static let purple = Color(hex: 0xE6E2FF)
-    static let blue = Color(hex: 0x3E24FF)
-    static let orange = Color(hex: 0xFF9500)
+    static let wte = Color(hex: 0xFFFFFF)
+    static let ppl = Color(hex: 0xE6E2FF)
+    static let bl = Color(hex: 0x3E24FF)
+    static let org = Color(hex: 0xFF9500)
 
-    static let lightGrey = Color(hex: 0xD9D9D9)
-    static let grey = Color(hex: 0x3C3C43)
-    static let black = Color(hex: 0x121212)
+    static let lGry = Color(hex: 0xD9D9D9)
+    static let gry = Color(hex: 0x3C3C43)
+    static let bck = Color(hex: 0x121212)
 
 
-    static let skyBlue = Color(hex: 0x007AFF)
-    static let whiteBlue = Color(hex: 0xDFEFFF)
+    static let skyBl = Color(hex: 0x007AFF)
+    static let whtBl = Color(hex: 0xDFEFFF)
 
 
 }
