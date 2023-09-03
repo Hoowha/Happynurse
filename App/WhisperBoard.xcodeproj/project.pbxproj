@@ -501,12 +501,13 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Derived/InfoPlists/WhisperBoard-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "해피이너스";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.igortarasenko.Whisperboard;
+				PRODUCT_BUNDLE_IDENTIFIER = Hoowha.HappyInus;
 				PRODUCT_NAME = WhisperBoard;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
@@ -526,12 +527,13 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Derived/InfoPlists/WhisperBoard-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "해피이너스";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.igortarasenko.Whisperboard;
+				PRODUCT_BUNDLE_IDENTIFIER = Hoowha.HappyInus;
 				PRODUCT_NAME = WhisperBoard;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;

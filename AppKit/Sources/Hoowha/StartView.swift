@@ -9,8 +9,6 @@ import SwiftUI
 
 struct StartView: View {
   
-  @State var isNurse: Bool = false
-  @State var isPatient: Bool = false
   var body: some View {
     
     NavigationView {
@@ -18,7 +16,7 @@ struct StartView: View {
         Color.background.ignoresSafeArea(.all)
         VStack {
           
-          Button(action: { isNurse.toggle() }) {
+          NavigationLink(destination: RequestListView()) {
             ZStack {
               Rectangle()
                 .foregroundColor(.clear)
@@ -31,6 +29,7 @@ struct StartView: View {
               }.bold().font(.system(size: 20)).foregroundColor(.bck)
             }
           }
+          
           
           NavigationLink(destination: MainView()) {
             ZStack {
@@ -52,7 +51,10 @@ struct StartView: View {
     
     .ignoresSafeArea()
   }
+  
+  
 }
+
 
 
 struct StartView_Previews: PreviewProvider {

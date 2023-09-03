@@ -320,11 +320,11 @@ struct SettingsScreenView: View {
         VStack(spacing: 15) {
 
           Text("본 화면은 MVP 제출을 위해 제작되었습니다.").bold()
-            .font(.system(size: 20))
+            .font(.system(size: 20)).foregroundColor(.white)
 
           Text("이 어플은 별도의 서비스로 제공될\n환자용과 간호사용을 모두 통합하여 개발한\n테스트용 어플리케이션입니다")
             .multilineTextAlignment(.center)
-            .font(.system(size: 16))
+            .font(.system(size: 16)).foregroundColor(.white)
 
         }.padding()
 
