@@ -34,6 +34,10 @@
 		2CA3DD7A3BA1646743FE7FE2 /* TuistBundle+WhisperBoardKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80E5D92E467A3365699B7AA /* TuistBundle+WhisperBoardKit.swift */; };
 		2DE09757A64E161CD87AFD58 /* Setting.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = F144A3359C363ED26F724297 /* Setting.framework */; platformFilter = ios; };
 		2EFC59D30E8FB8F4F47BAA10 /* MicSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178288C88E923EB8937DF5A9 /* MicSelectorView.swift */; };
+		30B9FEA22AA4920D00205BB7 /* RequestListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B9FEA12AA4920D00205BB7 /* RequestListView.swift */; };
+		30B9FEA42AA4922100205BB7 /* RequestList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B9FEA32AA4922100205BB7 /* RequestList.swift */; };
+		30B9FEA72AA4925300205BB7 /* CompletedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B9FEA62AA4925300205BB7 /* CompletedList.swift */; };
+		30B9FEA92AA4927B00205BB7 /* AccomplishedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B9FEA82AA4927B00205BB7 /* AccomplishedListView.swift */; };
 		3396F9DD869090A3E8C9C4E5 /* RecordingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065C018DC8D281E918927BEC /* RecordingCardView.swift */; };
 		3518D3D6A52C90A0F8318E72 /* VoiceLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF7957C74A3312562E5EE50 /* VoiceLanguage.swift */; };
 		368E5BFAD2CA26BB6BDF0DC7 /* DependenciesAdditions.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = F381CE619C6BB79323DB56D5 /* DependenciesAdditions.framework */; platformFilter = ios; };
@@ -253,6 +257,10 @@
 		2DACFAA6064F014BFA680A68 /* RecordingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingInfo.swift; sourceTree = "<group>"; };
 		2DC80521B37CFE351F2D8FD8 /* WaveformProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformProgressView.swift; sourceTree = "<group>"; };
 		2E5E4B50E8D7EB8C1AB7DB25 /* AlertState+error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertState+error.swift"; sourceTree = "<group>"; };
+		30B9FEA12AA4920D00205BB7 /* RequestListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestListView.swift; sourceTree = "<group>"; };
+		30B9FEA32AA4922100205BB7 /* RequestList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestList.swift; sourceTree = "<group>"; };
+		30B9FEA62AA4925300205BB7 /* CompletedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedList.swift; sourceTree = "<group>"; };
+		30B9FEA82AA4927B00205BB7 /* AccomplishedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccomplishedListView.swift; sourceTree = "<group>"; };
 		31F50F51296FD42EC650B800 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		36EAAD39B6DCC6DCF207771B /* SettingsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsClient.swift; sourceTree = "<group>"; };
 		37CCE1DE469A1CF9361D770C /* MessagePopupViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePopupViewModifier.swift; sourceTree = "<group>"; };
@@ -536,6 +544,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		30B9FEA02AA491F500205BB7 /* NurseView */ = {
+			isa = PBXGroup;
+			children = (
+				30B9FEA12AA4920D00205BB7 /* RequestListView.swift */,
+				30B9FEA82AA4927B00205BB7 /* AccomplishedListView.swift */,
+				30B9FEA52AA4922E00205BB7 /* Component */,
+			);
+			path = NurseView;
+			sourceTree = "<group>";
+		};
+		30B9FEA52AA4922E00205BB7 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				30B9FEA32AA4922100205BB7 /* RequestList.swift */,
+				30B9FEA62AA4925300205BB7 /* CompletedList.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		31A8B0C4F8377A47AA2E5D05 /* FilePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -613,6 +640,7 @@
 		68F664222AA477B700B33357 /* Hoowha */ = {
 			isa = PBXGroup;
 			children = (
+				30B9FEA02AA491F500205BB7 /* NurseView */,
 				68F6641C2AA470DA00B33357 /* Extension */,
 			);
 			path = Hoowha;
@@ -962,6 +990,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30B9FEA92AA4927B00205BB7 /* AccomplishedListView.swift in Sources */,
 				8ECDC8D2BEC99FC091FC72C3 /* TuistAssets+WhisperBoardKit.swift in Sources */,
 				2CA3DD7A3BA1646743FE7FE2 /* TuistBundle+WhisperBoardKit.swift in Sources */,
 				0409C6CD5A6331B9944559F6 /* TuistFiles+WhisperBoardKit.swift in Sources */,
@@ -983,6 +1012,7 @@
 				AD2FADF11C23DA8F5DA6495D /* Storage.swift in Sources */,
 				E102ADAF75D523D9D342F992 /* StorageClient.swift in Sources */,
 				FC32BD212CEE13680D6C8E7A /* StorageClientLive.swift in Sources */,
+				30B9FEA42AA4922100205BB7 /* RequestList.swift in Sources */,
 				D89FF3A4C9619A5A3FF07A79 /* LocalTranscriptionWorkExecutor.swift in Sources */,
 				499971D4873E2B6B40EB8FF0 /* TranscriptionParameters+whisper.swift in Sources */,
 				06576FDC1EAC35B2ED49C3AA /* WhisperContext+helpers.swift in Sources */,
@@ -997,8 +1027,10 @@
 				4B0148E99A5AE473D9041894 /* Settings.swift in Sources */,
 				162DB05BB5EA52C317E6DA5C /* Transcription.swift in Sources */,
 				A5D0842325FBE710718663ED /* TranscriptionParameters.swift in Sources */,
+				30B9FEA22AA4920D00205BB7 /* RequestListView.swift in Sources */,
 				3518D3D6A52C90A0F8318E72 /* VoiceLanguage.swift in Sources */,
 				BB75254683D69333CB10A55D /* VoiceModel.swift in Sources */,
+				30B9FEA72AA4925300205BB7 /* CompletedList.swift in Sources */,
 				2EFC59D30E8FB8F4F47BAA10 /* MicSelectorView.swift in Sources */,
 				8169421853C6FD99C7F6F585 /* RecordButton.swift in Sources */,
 				18E8FFBF251392152C23524C /* RecordScreenView.swift in Sources */,
