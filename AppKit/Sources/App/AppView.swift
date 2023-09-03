@@ -12,6 +12,7 @@ public struct AppView: View {
   public init() {}
 
   public var body: some View {
+    
     RootView(store: Store(initialState: Root.State()) {
       Root()
       #if DEBUG

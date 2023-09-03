@@ -116,6 +116,7 @@ public struct RecordScreenView: View {
       .padding(.top, .grid(4))
       .padding(.horizontal, .grid(4))
       .padding(.bottom, .grid(8))
+      .background(Color.background)
       .ignoresSafeArea(edges: .bottom)
       .alert(
         store: store.scope(state: \.$alert, action: { .alert($0) })

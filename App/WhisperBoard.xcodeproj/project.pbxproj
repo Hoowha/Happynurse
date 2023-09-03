@@ -28,8 +28,6 @@
 		587DFD36A7FAF7FACB693796 /* DequeModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE707ED097B2A91FF877A02F /* DequeModule.framework */; platformFilter = ios; };
 		60FB1ECA3D2E3C7FD00845BE /* ApplicationDependency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DEB1664D8F58E3FBB986E4 /* ApplicationDependency.framework */; platformFilter = ios; };
 		6324B5165C206B921D13051D /* CustomDump.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B1C2258BF36C2A56741630 /* CustomDump.framework */; platformFilter = ios; };
-		681B54662AA47C1700D15DC6 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681B54652AA47C1700D15DC6 /* StartView.swift */; };
-		681B54682AA47D4C00D15DC6 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681B54672AA47D4C00D15DC6 /* Color+Extension.swift */; };
 		6873BE33ED12F3CED73A0D78 /* whisper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D733BE79B42E326DB8C2A82 /* whisper.framework */; platformFilter = ios; };
 		726BC60C9400C5AE287E88BD /* BetterCodable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 139748C76EC5FBE6D4C13BEC /* BetterCodable.framework */; platformFilter = ios; };
 		78DD8482272E44F7D0C1B6A0 /* DSWaveformImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F36063ACAC61D83EB9774D2 /* DSWaveformImage.framework */; platformFilter = ios; };
@@ -138,8 +136,6 @@
 		57E1E9C201633E24F95EF20C /* TuistBundle+WhisperBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+WhisperBoard.swift"; sourceTree = "<group>"; };
 		58BD2C927FCCCED526D4E53E /* IdentifiedCollections.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IdentifiedCollections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6755E1F56FA34098CA6EC67C /* app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = app.entitlements; sourceTree = "<group>"; };
-		681B54652AA47C1700D15DC6 /* StartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
-		681B54672AA47D4C00D15DC6 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		68A48EFE737BAA60B1B00441 /* OrderedCollections.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OrderedCollections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7301C77022DC5B85C3ABA315 /* AssertionDependency.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AssertionDependency.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7829C16394C6B8116F4808A9 /* CompressionDependency.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CompressionDependency.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -331,8 +327,6 @@
 		8B8027E3294057A484F0D0DD = {
 			isa = PBXGroup;
 			children = (
-				681B54672AA47D4C00D15DC6 /* Color+Extension.swift */,
-				681B54652AA47C1700D15DC6 /* StartView.swift */,
 				B419D29B18EB06DB781D4B00 /* Project */,
 				66D8E3EB68EB4D5F308A50AD /* Frameworks */,
 				27D23157A62BBED82629B2C6 /* Products */,
@@ -482,10 +476,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C671D20A98348AB68783999F /* TuistAssets+WhisperBoard.swift in Sources */,
-				681B54682AA47D4C00D15DC6 /* Color+Extension.swift in Sources */,
 				FBC8CD9F24A1FDCA7C0D7DA9 /* TuistBundle+WhisperBoard.swift in Sources */,
 				D005D43B25C7F9E987915849 /* WhisperboardApp.swift in Sources */,
-				681B54662AA47C1700D15DC6 /* StartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

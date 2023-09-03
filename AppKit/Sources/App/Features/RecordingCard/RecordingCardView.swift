@@ -10,7 +10,9 @@ struct RecordingCardView: View {
 
   let store: StoreOf<RecordingCard>
 
+  @EnvironmentObject var stateSettings: StateSettings
   @ObservedObject var viewStore: ViewStoreOf<RecordingCard>
+  
   @State var showItem = false
 
   init(store: StoreOf<RecordingCard>) {
@@ -27,47 +29,6 @@ struct RecordingCardView: View {
 
   var cardView: some View {
     VStack(spacing: .grid(4)) {
-//      HStack(spacing: .grid(4)) {
-//        PlayButton(isPlaying: viewStore.mode.isPlaying) {
-//          viewStore.send(.playButtonTapped, animation: .easeIn(duration: 0.3))
-//        }
-//
-//        VStack(alignment: .leading, spacing: .grid(1)) {
-//          if viewStore.recording.title.isEmpty {
-//            Text("Untitled")
-//              .font(.DS.headlineS)
-//              .foregroundColor(.DS.Text.subdued)
-//              .opacity(0.5)
-//          } else {
-//            Text(viewStore.recording.title)
-//              .font(.DS.headlineS)
-//              .foregroundColor(.DS.Text.base)
-//          }
-//
-//          Text(viewStore.dateString)
-//            .font(.DS.captionM)
-//            .foregroundColor(.DS.Text.subdued)
-//        }
-//        .frame(maxWidth: .infinity, alignment: .leading)
-
-//        Text(viewStore.currentTimeString)
-//          .font(.DS.date)
-//          .foregroundColor(
-//            viewStore.mode.isPlaying
-//              ? Color.DS.Text.accent
-//              : Color.DS.Text.base
-//          )
-//      }
-
-//      if viewStore.mode.isPlaying {
-//        WaveformProgressView(
-//          store: store.scope(
-//            state: { $0.waveform },
-//            action: { .waveform($0) }
-//          )
-//        )
-//        .transition(.scale.combined(with: .opacity))
-//      }
 
       ZStack(alignment: .top) {
         VStack(alignment: .leading, spacing: .grid(2)) {
@@ -76,23 +37,13 @@ struct RecordingCardView: View {
             .foregroundColor(.DS.Text.base)
             .lineLimit(3)
             .frame(maxWidth: .infinity, alignment: .leading)
-
-//          if viewStore.recording.isTranscribed && !viewStore.isTranscribing {
-//            HStack(spacing: .grid(2)) {
-//              CopyButton(viewStore.transcription) {
-//                Image(systemName: "doc.on.clipboard")
-//              }
-//
-//              ShareLink(item: viewStore.transcription) {
-//                Image(systemName: "paperplane")
-//              }
-//            }.iconButtonStyle()
-//          }
         }
         .onAppear {
           if !viewStore.recording.isTranscribed {
             viewStore.send(.transcribeTapped)
           }
+        }.onChange(of: viewStore.recording.isTranscribed) { _ in
+          stateSettings.whisperChat = viewStore.transcription
         }
 
         
@@ -119,18 +70,9 @@ struct RecordingCardView: View {
                     .foregroundColor(.DS.Text.accent)
                 }
 
-//                Button("Cancel") {
-//                  viewStore.send(.cancelTranscriptionTapped)
-//                }.tertiaryButtonStyle()
               }
               .padding(.grid(2))
             }
-            
-//            else if !viewStore.recording.isTranscribed {
-//              Button("Transcribe") {
-//                viewStore.send(.transcribeTapped)
-//              }.tertiaryButtonStyle()
-//            }
           }
           .transition(.scale(scale: 0, anchor: .top).combined(with: .opacity).animation(.easeInOut(duration: 0.2)))
         }
