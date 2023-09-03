@@ -66,6 +66,7 @@
 		68D50D89DF8EC7ACAA56ABCC /* Inject.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 41C5478F6D6AF42991FDC34B /* Inject.framework */; platformFilter = ios; };
 		68F6641B2AA4706400B33357 /* DefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F6641A2AA4706400B33357 /* DefaultView.swift */; };
 		68F6641E2AA470ED00B33357 /* Colors+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F6641D2AA470ED00B33357 /* Colors+Extension.swift */; };
+		68F664212AA476EB00B33357 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 68F664202AA476EB00B33357 /* Alamofire */; };
 		68F9B9F52AA4686500CA9DE1 /* StateSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F9B9F42AA4686500CA9DE1 /* StateSettings.swift */; };
 		6B48280BB1BFE36F7770B7B4 /* WhisperBoardKit_WhisperBoardKit.bundle in Dependencies */ = {isa = PBXBuildFile; fileRef = 1FB9AA9190F3B0AF9B5687D7 /* WhisperBoardKit_WhisperBoardKit.bundle */; platformFilter = ios; };
 		6C3712A28E564D7BF339BB1C /* TabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ED84E4BB8AE5C3856789F8 /* TabBarContainerView.swift */; };
@@ -365,6 +366,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68F664212AA476EB00B33357 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,6 +610,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		68F664222AA477B700B33357 /* Hoowha */ = {
+			isa = PBXGroup;
+			children = (
+				68F6641C2AA470DA00B33357 /* Extension */,
+			);
+			path = Hoowha;
+			sourceTree = "<group>";
+		};
 		68F9B9F32AA4685200CA9DE1 /* AlertSetting */ = {
 			isa = PBXGroup;
 			children = (
@@ -737,7 +747,7 @@
 		CD6E702A1D404AAB580CE381 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				68F6641C2AA470DA00B33357 /* Extension */,
+				68F664222AA477B700B33357 /* Hoowha */,
 				68F664192AA4705500B33357 /* UIView */,
 				CEA9B9680466CA352A8C9065 /* App */,
 				0A010BBA29C9E304927E1D5F /* Common */,
@@ -883,6 +893,9 @@
 				D0F85736BA78663E887E84BD /* PBXTargetDependency */,
 			);
 			name = WhisperBoardKit;
+			packageProductDependencies = (
+				68F664202AA476EB00B33357 /* Alamofire */,
+			);
 			productName = WhisperBoardKit;
 			productReference = 3E5C9C0C41CB7E6ED28E6308 /* WhisperBoardKit.framework */;
 			productType = "com.apple.product-type.framework";
@@ -903,6 +916,9 @@
 				en,
 			);
 			mainGroup = DB76C003BDE35DB295FA35B6;
+			packageReferences = (
+				68F6641F2AA476EB00B33357 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 2030C8C1720E812EFE61BA33 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1370,6 +1386,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		68F6641F2AA476EB00B33357 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		68F664202AA476EB00B33357 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 68F6641F2AA476EB00B33357 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ED1B4EF00D62A6A88FB20564 /* Project object */;
 }

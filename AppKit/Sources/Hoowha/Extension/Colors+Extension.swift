@@ -32,4 +32,5 @@ extension Color {
     static let skyBlue = Color(hex: 0x007AFF)
     static let whiteBlue = Color(hex: 0xDFEFFF)
 
+
 }
