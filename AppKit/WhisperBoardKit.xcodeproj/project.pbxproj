@@ -79,8 +79,11 @@
 		6534F32B00F1A0F9139635F1 /* RootBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76988F5472162DE512762BDC /* RootBackgroundView.swift */; };
 		661ACA2C7B9D8FBBC8A1374F /* RecordingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E0B029400EAEB3740D6754 /* RecordingState.swift */; };
 		674CC424AA9AC759BE2D2AF3 /* AnimatedTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088F3970FD70C6060C4CFBF7 /* AnimatedTabBar.swift */; };
+		68A36B492AA4942200668647 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A36B482AA4942200668647 /* StartView.swift */; };
+		68A36B4B2AA4981800668647 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A36B4A2AA4981800668647 /* MainView.swift */; };
+		68A36B542AA4ADEA00668647 /* CheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A36B532AA4ADEA00668647 /* CheckView.swift */; };
+		68A36B562AA4AEF600668647 /* FinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A36B552AA4AEF600668647 /* FinishView.swift */; };
 		68D50D89DF8EC7ACAA56ABCC /* Inject.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 41C5478F6D6AF42991FDC34B /* Inject.framework */; platformFilter = ios; };
-		68F6641B2AA4706400B33357 /* DefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F6641A2AA4706400B33357 /* DefaultView.swift */; };
 		68F6641E2AA470ED00B33357 /* Colors+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F6641D2AA470ED00B33357 /* Colors+Extension.swift */; };
 		68F664212AA476EB00B33357 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 68F664202AA476EB00B33357 /* Alamofire */; };
 		68F9B9F52AA4686500CA9DE1 /* StateSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F9B9F42AA4686500CA9DE1 /* StateSettings.swift */; };
@@ -314,7 +317,10 @@
 		5B7B493C3B67C74B3BEA7D47 /* LocalTranscriptionWorkExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTranscriptionWorkExecutor.swift; sourceTree = "<group>"; };
 		5F5043CA9D23E4E566F29F60 /* CopyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyButton.swift; sourceTree = "<group>"; };
 		611B6C119B91CC47535E2ACC /* ggml-tiny.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "ggml-tiny.bin"; sourceTree = "<group>"; };
-		68F6641A2AA4706400B33357 /* DefaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultView.swift; sourceTree = "<group>"; };
+		68A36B482AA4942200668647 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		68A36B4A2AA4981800668647 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		68A36B532AA4ADEA00668647 /* CheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckView.swift; sourceTree = "<group>"; };
+		68A36B552AA4AEF600668647 /* FinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishView.swift; sourceTree = "<group>"; };
 		68F6641D2AA470ED00B33357 /* Colors+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors+Extension.swift"; sourceTree = "<group>"; };
 		68F9B9F42AA4686500CA9DE1 /* StateSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateSettings.swift; sourceTree = "<group>"; };
 		6D3885B9E3AC712C787410AD /* CasePaths.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CasePaths.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -677,12 +683,14 @@
 			path = Derived;
 			sourceTree = "<group>";
 		};
-		68F664192AA4705500B33357 /* UIView */ = {
+		68A36B4C2AA4981B00668647 /* Patient */ = {
 			isa = PBXGroup;
 			children = (
-				68F6641A2AA4706400B33357 /* DefaultView.swift */,
+				68A36B4A2AA4981800668647 /* MainView.swift */,
+				68A36B532AA4ADEA00668647 /* CheckView.swift */,
+				68A36B552AA4AEF600668647 /* FinishView.swift */,
 			);
-			path = UIView;
+			path = Patient;
 			sourceTree = "<group>";
 		};
 		68F6641C2AA470DA00B33357 /* Extension */ = {
@@ -696,6 +704,8 @@
 		68F664222AA477B700B33357 /* Hoowha */ = {
 			isa = PBXGroup;
 			children = (
+				68A36B482AA4942200668647 /* StartView.swift */,
+				68A36B4C2AA4981B00668647 /* Patient */,
 				30B044592AA4B32000D8BD67 /* GPT */,
 				30B044562AA4B1C200D8BD67 /* Utils */,
 				30B9FEB12AA49B1E00205BB7 /* RequirementViewModel.swift */,
@@ -836,7 +846,6 @@
 			isa = PBXGroup;
 			children = (
 				68F664222AA477B700B33357 /* Hoowha */,
-				68F664192AA4705500B33357 /* UIView */,
 				CEA9B9680466CA352A8C9065 /* App */,
 				0A010BBA29C9E304927E1D5F /* Common */,
 				FED6151DED308413F9E4B07D /* UI */,
@@ -994,6 +1003,13 @@
 		ED1B4EF00D62A6A88FB20564 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					72AFFFF406E5C27E00BD257F = {
+						LastSwiftMigration = 1430;
+					};
+				};
 			};
 			buildConfigurationList = 213322A69530E2B046CF6F77 /* Build configuration list for PBXProject "WhisperBoardKit" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -1062,9 +1078,11 @@
 				39C26071ED1717BEF633881A /* AudioRecorderClient.swift in Sources */,
 				68F9B9F52AA4686500CA9DE1 /* StateSettings.swift in Sources */,
 				661ACA2C7B9D8FBBC8A1374F /* RecordingState.swift in Sources */,
+				68A36B542AA4ADEA00668647 /* CheckView.swift in Sources */,
 				EAD853BD296CDB46F757BA03 /* BuildClient.swift in Sources */,
 				58FA0D9300279E697A91D1F2 /* Dependencies.swift in Sources */,
 				01D17F961EEBE66390A211EB /* FileImportClient.swift in Sources */,
+				68A36B4B2AA4981800668647 /* MainView.swift in Sources */,
 				D5C30D2C8D6F1C1A02EED2A3 /* DataMigrator.swift in Sources */,
 				30B9FEAC2AA497AE00205BB7 /* Patient.swift in Sources */,
 				C9A15AA4C6EBB9EFEC8FDAB7 /* FileSystemClient.swift in Sources */,
@@ -1103,6 +1121,7 @@
 				18E8FFBF251392152C23524C /* RecordScreenView.swift in Sources */,
 				D36F06D714742AC2F0CE8952 /* Recording.swift in Sources */,
 				753B74B5F318D9FD7F556C4C /* RecordingControls.swift in Sources */,
+				68A36B562AA4AEF600668647 /* FinishView.swift in Sources */,
 				F2538132E06BDC599EA4C60E /* RecordingCard.swift in Sources */,
 				68F6641E2AA470ED00B33357 /* Colors+Extension.swift in Sources */,
 				3396F9DD869090A3E8C9C4E5 /* RecordingCardView.swift in Sources */,
@@ -1111,7 +1130,6 @@
 				674CC424AA9AC759BE2D2AF3 /* AnimatedTabBar.swift in Sources */,
 				6534F32B00F1A0F9139635F1 /* RootBackgroundView.swift in Sources */,
 				C220169F5CBD8975CF09C1E9 /* RootStore.swift in Sources */,
-				68F6641B2AA4706400B33357 /* DefaultView.swift in Sources */,
 				9194C586DC10676FE5281D17 /* RootView.swift in Sources */,
 				6C3712A28E564D7BF339BB1C /* TabBarContainerView.swift in Sources */,
 				D6ED1BFEE52D7B7D06DA5F99 /* ModelRowView.swift in Sources */,
@@ -1136,6 +1154,7 @@
 				30B0445B2AA4B33D00D8BD67 /* Key.swift in Sources */,
 				244F5D3D02C40F0F47206298 /* FilePickerUIRepresentable.swift in Sources */,
 				918193A34D117650998CC97D /* MessagePopupViewModifier.swift in Sources */,
+				68A36B492AA4942200668647 /* StartView.swift in Sources */,
 				61C5EA878F7617B34EDF41AC /* PlayButton.swift in Sources */,
 				27DB26EBF7B97DFF3E9BBDE0 /* TouchLocatingView.swift in Sources */,
 				1A7FD14D317D09D096AC4B2F /* View++.swift in Sources */,
@@ -1178,6 +1197,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				INFOPLIST_FILE = "Derived/InfoPlists/WhisperBoardKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -1187,6 +1207,8 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
 				PRODUCT_BUNDLE_IDENTIFIER = me.igortarasenko.WhisperboardKit;
 				PRODUCT_NAME = WhisperBoardKit;
 				SDKROOT = iphoneos;
@@ -1283,6 +1305,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				INFOPLIST_FILE = "Derived/InfoPlists/WhisperBoardKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -1292,6 +1315,8 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
 				PRODUCT_BUNDLE_IDENTIFIER = me.igortarasenko.WhisperboardKit;
 				PRODUCT_NAME = WhisperBoardKit;
 				SDKROOT = iphoneos;
@@ -1311,6 +1336,7 @@
 		A155EA67409B6DDE0CD2BDB1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Derived/InfoPlists/WhisperBoardKit_WhisperBoardKit-Info.plist";
@@ -1321,6 +1347,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Hoowha/WhisperBoardKit_WhisperBoardKit-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1412,6 +1439,7 @@
 		D74E048414F86BDC2BAC2B39 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Derived/InfoPlists/WhisperBoardKit_WhisperBoardKit-Info.plist";
@@ -1423,6 +1451,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Hoowha/WhisperBoardKit_WhisperBoardKit-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

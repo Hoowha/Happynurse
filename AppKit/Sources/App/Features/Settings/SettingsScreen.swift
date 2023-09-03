@@ -283,42 +283,57 @@ struct SettingsScreenView: View {
   }
 
   var body: some View {
-    SettingStack {
-      SettingPage(title: "", backgroundColor: .clear) {
-//        SettingGroup(header: "", backgroundColor: .DS.Background.secondary) {
-//          SettingPage(
-//            title: "Models",
-//            selectedChoice: viewStore.selectedModelReadableName,
-//            backgroundColor: .DS.Background.primary,
-//            previewConfiguration: .init(icon: .system(icon: "square.and.arrow.down", backgroundColor: .systemBlue))
-//          ) {
-////            SettingGroup(footer: .modelSelectorFooter) {}
-//
-//            SettingGroup(header: "Whisper models", backgroundColor: .DS.Background.secondary) {
-              SettingCustomView(id: "models") {
-                ForEachStore(modelSelectorStore.scope(state: \.modelRows, action: ModelSelector.Action.modelRow)) { modelRowStore in
-                  ModelRowView(store: modelRowStore)
-                }
-                .removeClipToBounds()
+    
+    ZStack {
+      
+      Color.bl.ignoresSafeArea()
+      
+      VStack {
+            
+        SettingStack {
+          SettingPage(title: "", backgroundColor: Color.bl) {
+            SettingCustomView(id: "models") {
+              ForEachStore(modelSelectorStore.scope(state: \.modelRows, action: ModelSelector.Action.modelRow)) { modelRowStore in
+                ModelRowView(store: modelRowStore)
               }
-//
-//
-//            }
-//          }
-//        }
+              .removeClipToBounds()
+            }
+          }
+        }.ignoresSafeArea()
+        .onAppear {
+          viewStore.send(.modelSelector(.onAppear))
+          viewStore.send(.updateInfo)
+        }.frame(height: UIScreen.main.bounds.height * 0.1)
+        .environment(\.settingBackgroundColor, .DS.Background.primary)
+        .environment(\.settingSecondaryBackgroundColor, .DS.Background.secondary)
+        .alert(store: modelSelectorStore.scope(state: \.$alert, action: { .alert($0) }))
+        .alert(store: store.scope(state: \.$alert, action: { .alert($0) }))
+        .task { viewStore.send(.task) }
+        .enableInjection()
         
+        Spacer()
 
+        Image("Logo").resizable().scaledToFit().padding()
+
+        Spacer()
+
+        VStack(spacing: 15) {
+
+          Text("본 화면은 MVP 제출을 위해 제작되었습니다.").bold()
+            .font(.system(size: 20))
+
+          Text("이 어플은 별도의 서비스로 제공될\n환자용과 간호사용을 모두 통합하여 개발한\n테스트용 어플리케이션입니다")
+            .multilineTextAlignment(.center)
+            .font(.system(size: 16))
+
+        }.padding()
+
+        Spacer()
+        
       }
-    }.onAppear {
-      viewStore.send(.modelSelector(.onAppear))
-      viewStore.send(.updateInfo)
     }
-    .environment(\.settingBackgroundColor, .DS.Background.primary)
-    .environment(\.settingSecondaryBackgroundColor, .DS.Background.secondary)
-    .alert(store: modelSelectorStore.scope(state: \.$alert, action: { .alert($0) }))
-    .alert(store: store.scope(state: \.$alert, action: { .alert($0) }))
-    .task { viewStore.send(.task) }
-    .enableInjection()
+    .ignoresSafeArea()
+    .background(Color.bl)
   }
 }
 

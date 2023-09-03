@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -58,7 +58,7 @@
 		E7214524EA6E325007B6C5D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D05E6E9C56C64FF1EC41B645 /* Assets.xcassets */; };
 		EC19550F8E82A05B604C6561 /* IdentifiedCollections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58BD2C927FCCCED526D4E53E /* IdentifiedCollections.framework */; platformFilter = ios; };
 		EFC90ECC5E1347020A1DE5EC /* DependenciesAdditions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8802F332A2B93849BCF9D547 /* DependenciesAdditions.framework */; platformFilter = ios; };
-		F41E094D4B06CA348587E9F9 /* ShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A8CAB9F782D8719D266BE28B /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F41E094D4B06CA348587E9F9 /* ShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A8CAB9F782D8719D266BE28B /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FBC8CD9F24A1FDCA7C0D7DA9 /* TuistBundle+WhisperBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E1E9C201633E24F95EF20C /* TuistBundle+WhisperBoard.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,14 +93,14 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B08803F8E3BC4BE689CEC4E1 /* Embed App Extensions */ = {
+		B08803F8E3BC4BE689CEC4E1 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstSubfolderSpec = 13;
 			files = (
-				F41E094D4B06CA348587E9F9 /* ShareExtension.appex in Embed App Extensions */,
+				F41E094D4B06CA348587E9F9 /* ShareExtension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		FF0804548A9B6EDD66E3FEA0 /* Dependencies */ = {
@@ -400,7 +400,7 @@
 			buildPhases = (
 				B6056B4C3921862FB21231F0 /* Sources */,
 				BCB03A2C2439308CE31C11EC /* Resources */,
-				B08803F8E3BC4BE689CEC4E1 /* Embed App Extensions */,
+				B08803F8E3BC4BE689CEC4E1 /* Embed Foundation Extensions */,
 				13C41F150914ED79BEACAE3D /* Embed Frameworks */,
 				23588274B6731C74E63A1B21 /* Frameworks */,
 				FF0804548A9B6EDD66E3FEA0 /* Dependencies */,
@@ -421,8 +421,8 @@
 		0C8D5E420FF8D09BF05C338E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				TargetAttributes = {
-				};
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
 			};
 			buildConfigurationList = EDCBBC106DD90CAAD775CB12 /* Build configuration list for PBXProject "WhisperBoard" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -596,7 +596,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "-lc++ $(inherited)";
+				OTHER_LDFLAGS = (
+					"-lc++",
+					"$(inherited)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
 				VALIDATE_PRODUCT = YES;
@@ -684,8 +687,11 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
-					"-lc++ $(inherited)",
-					"-Xlinker -interposable $(inherited)",
+					"-lc++",
+					"$(inherited)",
+					"-Xlinker",
+					"-interposable",
+					"$(inherited)",
 				);
 				OTHER_SWIFT_FLAGS = "-D DEBUG $(inherited) -Xfrontend -warn-long-function-bodies=500 -Xfrontend -warn-long-expression-type-checking=500 -Xfrontend -debug-time-function-bodies -Xfrontend -enable-actor-data-race-checks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

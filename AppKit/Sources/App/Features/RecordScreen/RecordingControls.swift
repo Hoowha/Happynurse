@@ -10,6 +10,8 @@ import SwiftUI
 // MARK: - RecordingControls
 
 public struct RecordingControls: ReducerProtocol {
+
+  @EnvironmentObject var stateSettings: StateSettings
   public struct State: Equatable {
     public enum RecorderPermission {
       case allowed
@@ -23,6 +25,7 @@ public struct RecordingControls: ReducerProtocol {
     var recording: Recording.State?
 
     var audioRecorderPermission = RecorderPermission.undetermined
+    
 
     public init(recording: Recording.State? = nil) {
       self.recording = recording
@@ -141,6 +144,8 @@ public struct RecordingControlsView: View {
   let store: StoreOf<RecordingControls>
 
   @ObservedObject var viewStore: ViewStoreOf<RecordingControls>
+  
+  @EnvironmentObject var stateSettings: StateSettings
 
   var currentTime: String {
     (viewStore.recording?.duration).flatMap {
@@ -154,48 +159,44 @@ public struct RecordingControlsView: View {
   }
 
   public var body: some View {
-    VStack(spacing: .grid(3)) {
+    VStack {
+      
+      Spacer()
+      
+      Text("요청 사항을 듣고 있습니다").font(.system(size: 18)).bold().foregroundColor(.gry)
+      
       WaveformLiveCanvas(samples: viewStore.recording?.samples ?? [], configuration: Waveform.Configuration(
         backgroundColor: .clear,
-        style: .striped(.init(color: UIColor(Color.DS.Text.base), width: 2, spacing: 4, lineCap: .round)),
+        style: .striped(.init(color: UIColor(Color.skyBl), width: 2, spacing: 4, lineCap: .round)),
         dampening: .init(percentage: 0.125, sides: .both),
         position: .middle,
         scale: DSScreen.scale,
         verticalScalingFactor: 0.95,
         shouldAntialias: true
       ))
-      .frame(maxWidth: .infinity)
-
-      Text(currentTime)
-        .font(.DS.titleL)
-        .monospaced()
-        .foregroundColor(.DS.Text.accent)
+      .frame(maxWidth: .infinity, maxHeight: UIScreen.main.bounds.height * 0.4)
+      
+      Spacer()
 
       HStack(spacing: .grid(8)) {
-//        if viewStore.recording?.mode == .paused {
-//          Button { viewStore.send(.recording(.deleteButtonTapped), animation: .default) }
-//            label: {
-//              Image(systemName: "multiply")
-//                .font(.DS.titleL)
-//                .frame(width: 50, height: 50)
-//                .containerShape(Rectangle())
-//            }
-//            .transition(.move(edge: .trailing).combined(with: .opacity))
-//        }
-
         ZStack {
           if viewStore.recording?.mode == .recording {
             Button {
               viewStore.send(.recording(.pauseButtonTapped), animation: .default)
               viewStore.send(.recording(.saveButtonTapped), animation: .default)
+              stateSettings.convertStage = 1
               
             } label: {
-              Circle()
-                .fill(RadialGradient.accent)
-                .shadow(color: .DS.Background.accent.opacity(0.5), radius: 20)
-                .overlay(Image(systemName: "stop.fill")
-                  .font(.DS.titleL)
-                  .foregroundColor(.DS.Text.base))
+              ZStack {
+                Rectangle()
+                  .foregroundColor(.clear)
+                  .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.06)
+                  .background(Color.skyBl)
+                  .cornerRadius(15)
+                  .padding()
+                
+                Text("요청 완료하기").foregroundColor(.white).bold().font(.system(size: 18))
+              }
             }
             .recordButtonStyle()
           } else if viewStore.recording?.mode == .paused {
@@ -216,47 +217,11 @@ public struct RecordingControlsView: View {
           }
         }
         .frame(width: 70, height: 70)
-
-//        if viewStore.recording?.mode == .paused {
-//          Button { viewStore.send(.recording(.saveButtonTapped), animation: .default) }
-//            label: {
-//              Image(systemName: "checkmark")
-//                .font(.DS.titleL)
-//                .frame(width: 50, height: 50)
-//                .containerShape(Rectangle())
-//            }
-//            .transition(.move(edge: .leading).combined(with: .opacity))
-//        }
+        .onAppear {
+          viewStore.send(.recordButtonTapped, animation: .default)
+        }
       }
       .padding(.horizontal, .grid(3))
-//      .popover(
-//        present: viewStore.$isGotToDetailsPopupPresented,
-//        attributes: {
-//          $0.position = .absolute(
-//            originAnchor: .top,
-//            popoverAnchor: .bottom
-//          )
-//          $0.presentation = .init(animation: .gentleBounce(), transition: .move(edge: .bottom))
-//          $0.dismissal = .init(
-//            animation: .gentleBounce(),
-//            transition: .move(edge: .bottom),
-//            mode: .dragDown
-//          )
-//        }
-//      ) {
-//        VStack {
-//          Text("Go to new recording?")
-//            .font(.DS.headlineM)
-//            .foregroundColor(.DS.Text.base)
-//
-//          Button("Open Recording") {
-//            viewStore.send(.goToDetailsButtonTapped)
-//          }.secondaryButtonStyle()
-//        }
-//        .padding(.grid(2))
-//        .cardStyle()
-//        .padding(.grid(2))
-//      }
     }
     .enableInjection()
   }

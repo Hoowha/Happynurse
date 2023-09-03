@@ -21,16 +21,45 @@ struct RootView: View {
     viewStore = ViewStore(store) { $0.selectedTab }
   }
   
+  
 
   var body: some View {
-//    CustomTabBarView(
     VStack{
       if stateSettings.isDownloading {
-        SettingsScreenView(store: store.scope(state: \.settingsScreen, action: Root.Action.settingsScreen)).environmentObject(stateSettings)
+        ZStack {
+          Color.bl.ignoresSafeArea()
+          SettingsScreenView(store: store.scope(state: \.settingsScreen, action: Root.Action.settingsScreen)).environmentObject(stateSettings)
+        }
       } else {
-        RecordScreenView(store: store.scope(state: \.recordScreen, action: Root.Action.recordScreen))
-        RecordingListScreenView(store: store.scope(state: \.recordingListScreen, action: Root.Action.recordingListScreen))
         
+          StartView().environmentObject(stateSettings)
+          .fullScreenCover(isPresented: $stateSettings.isRecording) {
+            VStack {
+
+              ZStack {
+                // background whisper
+                RecordingListScreenView(store: store.scope(state: \.recordingListScreen, action: Root.Action.recordingListScreen)).environmentObject(stateSettings).opacity(0)
+                
+                // if not converting -> recording
+                if stateSettings.convertStage == 0 {
+                  RecordScreenView(store: store.scope(state: \.recordScreen, action: Root.Action.recordScreen)).environmentObject(stateSettings)
+                } else if stateSettings.convertStage == 1 { // after recording should converting
+                  ZStack {
+                    Color.background.ignoresSafeArea(.all)
+                    ProgressView(label: { Text("요청 사항을 변환하고 있습니다.").font(.system(size: 18)).bold().foregroundColor(.gry) })
+                  }.ignoresSafeArea(.all)
+                } else if stateSettings.convertStage == 2 {
+                  CheckView().environmentObject(stateSettings)
+                } else {
+                  FinishView().environmentObject(stateSettings)
+                }
+                
+              }.onChange(of: stateSettings.whisperChat) { _ in stateSettings.convertStage = 2
+              }
+            }
+          }
+        
+
       }
       //    )
     }
