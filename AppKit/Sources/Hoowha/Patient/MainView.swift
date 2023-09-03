@@ -18,18 +18,10 @@ struct MainView: View {
           Color.background.ignoresSafeArea(.all)
           VStack {
             
-            HStack {
-              Spacer()
-              Button(action: { dismiss() }) {
-                Image(systemName: "house.fill").foregroundColor(.lGry).font(.system(size: 28))
-              }.padding()
-            }.padding().padding(.top)
-            
             HStack(spacing: 0) {
               Image(systemName: "cross.circle.fill").foregroundColor(Color.bck).bold().font(.system(size: 30))
               Text(" 서울SKT병원").foregroundColor(Color.bck).bold().font(.system(size: 30))
               Spacer()
-              
               
             }.padding(.horizontal)
             
@@ -81,9 +73,19 @@ struct MainView: View {
             Spacer()
             
           }
-        }.ignoresSafeArea(.all)
+        }
+        .navigationBarItems(trailing: homeButton)
         .navigationBarBackButtonHidden(true)
     }
+  
+  private var homeButton: some View {
+    HStack {
+      Spacer()
+      Button(action: { dismiss() }) {
+        Image(systemName: "house.fill").foregroundColor(Color.gray).font(.system(size: 22))
+      }
+    }
+  }
 }
 
 struct MainView_Previews: PreviewProvider {

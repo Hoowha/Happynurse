@@ -36,6 +36,7 @@ struct RootView: View {
       } else {
         
           StartView().environmentObject(stateSettings)
+          .environmentObject(requirementModel)
           .fullScreenCover(isPresented: $stateSettings.isRecording) {
             VStack {
 
