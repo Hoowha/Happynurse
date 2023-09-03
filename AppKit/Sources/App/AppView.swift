@@ -10,12 +10,14 @@ import SwiftUI
 
 public struct AppView: View {
   @StateObject var requirementModel = RequirementViewModel()
+  @StateObject var GPTModel = GPTViewModel()
   
   public init() {}
 
   public var body: some View {
-    RequestListView()
+    RecordView()
       .environmentObject(requirementModel)
+      .environmentObject(GPTModel)
 //    RootView(store: Store(initialState: Root.State()) {
 //      Root()
 //      #if DEBUG
