@@ -41,9 +41,13 @@ struct RecordingCardView: View {
         .onAppear {
           if !viewStore.recording.isTranscribed {
             viewStore.send(.transcribeTapped)
+            // Start processing
+            stateSettings.whisperProcessing = 1
           }
         }.onChange(of: viewStore.recording.isTranscribed) { _ in
           stateSettings.whisperChat = viewStore.transcription
+          // End Processing
+          stateSettings.whisperProcessing = 2
         }
 
         

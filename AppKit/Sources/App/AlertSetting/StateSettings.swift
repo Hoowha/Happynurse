@@ -11,6 +11,8 @@ class StateSettings: ObservableObject {
   @Published var isDownloading = true
   @Published var isRecording = false
   @Published var whisperChat = ""
+  @Published var whisperProcessing: Int = 0
+  @Published var chatGPTChat = ""
   // 0: recording
   // 1: progressive
   // 2: checking

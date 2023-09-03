@@ -48,7 +48,9 @@ struct StartView: View {
           
         }.padding()
       }
-    }.ignoresSafeArea()
+    }
+    
+    .ignoresSafeArea()
   }
 }
 

@@ -101,7 +101,8 @@ public struct RecordScreenView: View {
   @ObserveInjection var inject
 
   let store: StoreOf<RecordScreen>
-
+  @EnvironmentObject var stateSettings: StateSettings
+  
   public init(store: StoreOf<RecordScreen>) {
     self.store = store
   }
@@ -123,6 +124,9 @@ public struct RecordScreenView: View {
       )
     }
     .enableInjection()
+    .onAppear {
+      stateSettings.whisperProcessing = 0
+    }
   }
 }
 

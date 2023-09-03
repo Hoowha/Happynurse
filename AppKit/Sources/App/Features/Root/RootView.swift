@@ -8,6 +8,9 @@ import SwiftUI
 
 struct RootView: View {
   @ObserveInjection var inject
+  @ObservedObject var gptModel = GPTViewModel()
+  @ObservedObject var requirementModel = RequirementViewModel()
+  
   @ObservedObject var stateSettings = StateSettings()
 
   let store: StoreOf<Root>
@@ -50,13 +53,32 @@ struct RootView: View {
                   }.ignoresSafeArea(.all)
                 } else if stateSettings.convertStage == 2 {
                   CheckView().environmentObject(stateSettings)
+                    .environmentObject(gptModel)
                 } else {
                   FinishView().environmentObject(stateSettings)
                 }
-                
-              }.onChange(of: stateSettings.whisperChat) { _ in stateSettings.convertStage = 2
               }
+              .onChange(of: stateSettings.whisperProcessing) { processingStep in
+                
+//                print("stateSettings.whisperChat", stateSettings.whisperChat)
+                if processingStep == 2 {
+                  gptModel.currentInput = stateSettings.whisperChat
+                  gptModel.sendMessage()
+                  stateSettings.convertStage = 2
+                }
+                
+              }
+
             }
+          }
+          
+          .onChange(of: gptModel.answer?.content) { _ in
+            print("stateSettings.whisperChat", stateSettings.whisperChat)
+            print("stateSettings.chatGPTChat", stateSettings.chatGPTChat)
+
+            stateSettings.chatGPTChat = gptModel.answer!.content
+            stateSettings.convertStage = 2
+
           }
         
 

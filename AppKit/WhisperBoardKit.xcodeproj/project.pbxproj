@@ -83,6 +83,8 @@
 		68A36B4B2AA4981800668647 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A36B4A2AA4981800668647 /* MainView.swift */; };
 		68A36B542AA4ADEA00668647 /* CheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A36B532AA4ADEA00668647 /* CheckView.swift */; };
 		68A36B562AA4AEF600668647 /* FinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A36B552AA4AEF600668647 /* FinishView.swift */; };
+		68A36B582AA4C00500668647 /* PatientRequestListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A36B572AA4C00500668647 /* PatientRequestListView.swift */; };
+		68A36B5A2AA4C27100668647 /* RequestComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A36B592AA4C27100668647 /* RequestComponent.swift */; };
 		68D50D89DF8EC7ACAA56ABCC /* Inject.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 41C5478F6D6AF42991FDC34B /* Inject.framework */; platformFilter = ios; };
 		68F6641E2AA470ED00B33357 /* Colors+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F6641D2AA470ED00B33357 /* Colors+Extension.swift */; };
 		68F664212AA476EB00B33357 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 68F664202AA476EB00B33357 /* Alamofire */; };
@@ -321,6 +323,8 @@
 		68A36B4A2AA4981800668647 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		68A36B532AA4ADEA00668647 /* CheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckView.swift; sourceTree = "<group>"; };
 		68A36B552AA4AEF600668647 /* FinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishView.swift; sourceTree = "<group>"; };
+		68A36B572AA4C00500668647 /* PatientRequestListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientRequestListView.swift; sourceTree = "<group>"; };
+		68A36B592AA4C27100668647 /* RequestComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestComponent.swift; sourceTree = "<group>"; };
 		68F6641D2AA470ED00B33357 /* Colors+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors+Extension.swift"; sourceTree = "<group>"; };
 		68F9B9F42AA4686500CA9DE1 /* StateSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateSettings.swift; sourceTree = "<group>"; };
 		6D3885B9E3AC712C787410AD /* CasePaths.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CasePaths.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -689,6 +693,8 @@
 				68A36B4A2AA4981800668647 /* MainView.swift */,
 				68A36B532AA4ADEA00668647 /* CheckView.swift */,
 				68A36B552AA4AEF600668647 /* FinishView.swift */,
+				68A36B572AA4C00500668647 /* PatientRequestListView.swift */,
+				68A36B592AA4C27100668647 /* RequestComponent.swift */,
 			);
 			path = Patient;
 			sourceTree = "<group>";
@@ -1100,6 +1106,7 @@
 				06576FDC1EAC35B2ED49C3AA /* WhisperContext+helpers.swift in Sources */,
 				30B0445F2AA4B38800D8BD67 /* OpenAIManager.swift in Sources */,
 				D57BA0A3E0C23FDFA9A69C13 /* WhisperContext.swift in Sources */,
+				68A36B582AA4C00500668647 /* PatientRequestListView.swift in Sources */,
 				81C2841DBA3F10F5711FD480 /* TranscriptionTask.swift in Sources */,
 				0ABA87F1290E69A2E8E77710 /* TranscriptionWorker.swift in Sources */,
 				CEDA0416E5C25DE8E2777A8D /* TranscriptionWorkerClient.swift in Sources */,
@@ -1125,6 +1132,7 @@
 				F2538132E06BDC599EA4C60E /* RecordingCard.swift in Sources */,
 				68F6641E2AA470ED00B33357 /* Colors+Extension.swift in Sources */,
 				3396F9DD869090A3E8C9C4E5 /* RecordingCardView.swift in Sources */,
+				68A36B5A2AA4C27100668647 /* RequestComponent.swift in Sources */,
 				CA43746E47473A1B0674F80C /* RecordingDetailsView.swift in Sources */,
 				EEC4751A2C1AE42602B2F63D /* RecordingListScreenView.swift in Sources */,
 				674CC424AA9AC759BE2D2AF3 /* AnimatedTabBar.swift in Sources */,

@@ -13,6 +13,7 @@ struct MainView: View {
   @Environment(\.dismiss) var dismiss
     var body: some View {
       
+      
         ZStack {
           Color.background.ignoresSafeArea(.all)
           VStack {
@@ -62,25 +63,26 @@ struct MainView: View {
               }.frame(height: UIScreen.main.bounds.height * 0.33)
             }.padding(.horizontal)
             
-            NavigationLink(destination: StartLoadingView()) {
-              ZStack {
-                Rectangle()
-                  .foregroundColor(.clear)
-                  .background(Color.whtBl)
-                  .cornerRadius(20)
-                HStack {
-                  Text("문의사항 목록").bold().font(.title).foregroundColor(.skyBl)
-                  Spacer()
-                  Image(systemName: "list.bullet.clipboard").foregroundColor(.skyBl).font(.system(size: 40))
-                }.padding().padding(.horizontal)
-              }.frame(height: UIScreen.main.bounds.height * 0.11)
-            }.padding(.horizontal)
+//            NavigationLink(destination: StartView()) {
+//              ZStack {
+//                Rectangle()
+//                  .foregroundColor(.clear)
+//                  .background(Color.whtBl)
+//                  .cornerRadius(20)
+//                HStack {
+//                  Text("문의사항 목록").bold().font(.title).foregroundColor(.skyBl)
+//                  Spacer()
+//                  Image(systemName: "list.bullet.clipboard").foregroundColor(.skyBl).font(.system(size: 40))
+//                }.padding().padding(.horizontal)
+//              }.frame(height: UIScreen.main.bounds.height * 0.11)
+//            }.padding(.horizontal)
             
             Spacer()
             Spacer()
             
           }
         }.ignoresSafeArea(.all)
+        .navigationBarBackButtonHidden(true)
     }
 }
 

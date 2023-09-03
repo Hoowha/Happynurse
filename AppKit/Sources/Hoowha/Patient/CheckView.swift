@@ -25,7 +25,7 @@ struct CheckView: View {
         
         ZStack {
           RoundedRectangle(cornerRadius: 20).foregroundColor(.white)
-          Text("\(stateSettings.whisperChat)").foregroundColor(.bck).bold().font(.system(size: 25))
+          Text("\(stateSettings.chatGPTChat)").foregroundColor(.bck).bold().font(.system(size: 25))
             .multilineTextAlignment(.leading)
             .lineLimit(nil).padding()
         }.padding()
