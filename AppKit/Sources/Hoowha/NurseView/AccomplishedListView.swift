@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AccomplishedListView: View {
     @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject var requirementViewModel: RequirementViewModel
+  
     var body: some View {
         NavigationStack {
             ZStack {
@@ -16,7 +18,9 @@ struct AccomplishedListView: View {
                     .ignoresSafeArea()
                 
                 ScrollView {
-                    RequestList()
+                  ForEach(requirementViewModel.endList.sorted{ $0.requestTime < $1.requestTime }) { request in
+                    RequestList(request: request)
+                  }
                 }
                 .scrollIndicators(.never)
                 .padding(.horizontal)

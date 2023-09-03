@@ -9,23 +9,27 @@ import SwiftUI
 // MARK: - AppView
 
 public struct AppView: View {
+  @StateObject var requirementModel = RequirementViewModel()
+  
   public init() {}
 
   public var body: some View {
-    RootView(store: Store(initialState: Root.State()) {
-      Root()
-      #if DEBUG
-        .dependency(\.storage, SettingsClient.liveValue.getSettings().useMockedClients ? .testValue : .liveValue)
-        .transformDependency(\.transcriptionWorker) { worker in
-          if SettingsClient.liveValue.getSettings().useMockedClients {
-            worker.transcriptionStream = { [worker] in
-              worker.transcriptionStream().filter { !$0.status.isError }.eraseToStream()
-            }
-          }
-        }
-        ._printChanges(.actionLabels)
-      #endif
-    })
+    RequestListView()
+      .environmentObject(requirementModel)
+//    RootView(store: Store(initialState: Root.State()) {
+//      Root()
+//      #if DEBUG
+//        .dependency(\.storage, SettingsClient.liveValue.getSettings().useMockedClients ? .testValue : .liveValue)
+//        .transformDependency(\.transcriptionWorker) { worker in
+//          if SettingsClient.liveValue.getSettings().useMockedClients {
+//            worker.transcriptionStream = { [worker] in
+//              worker.transcriptionStream().filter { !$0.status.isError }.eraseToStream()
+//            }
+//          }
+//        }
+//        ._printChanges(.actionLabels)
+//      #endif
+//    })
   }
 }
 

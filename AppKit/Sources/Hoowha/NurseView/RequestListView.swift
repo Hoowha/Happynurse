@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RequestListView: View {
+  @EnvironmentObject var requirementViewModel: RequirementViewModel
+  
     var body: some View {
         NavigationStack {
             ZStack {
@@ -26,7 +28,9 @@ struct RequestListView: View {
                     .padding(.top, 11)
                     
                     ScrollView {
-                        RequestList()
+                      ForEach(requirementViewModel.watingList.sorted{ $0.requestTime < $1.requestTime }) { request in
+                        RequestList(request: request)
+                      }
                         
                         CompletedList()
                     }
@@ -34,7 +38,6 @@ struct RequestListView: View {
                 }
                 .padding(.horizontal)
             }
-            
             .navigationBarItems(leading: endListButton)
             .navigationBarItems(trailing: loginInfoButton)
         }
