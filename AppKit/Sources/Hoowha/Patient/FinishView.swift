@@ -21,6 +21,7 @@ struct FinishView: View {
         Spacer()
         
         Button(action: {
+          // MARK: CHANGE HERE
           stateSettings.requests.append(stateSettings.whisperChat)
           stateSettings.isRecording.toggle() }){
           ZStack {

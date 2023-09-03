@@ -9,17 +9,13 @@ import SwiftUI
 // MARK: - AppView
 
 public struct AppView: View {
-  @StateObject var requirementModel = RequirementViewModel()
-  @StateObject var GPTModel = GPTViewModel()
   
   public init() {}
 
   public var body: some View {
 
     
-    RootView(store: Store(initialState: Root.State())
-      .environmentObject(requirementModel)
-      .environmentObject(GPTModel) {
+    RootView(store: Store(initialState: Root.State()){
       Root()
       #if DEBUG
         .dependency(\.storage, SettingsClient.liveValue.getSettings().useMockedClients ? .testValue : .liveValue)
